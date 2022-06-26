@@ -45,6 +45,9 @@ if url != None:
 if url == None:
     #Accept URL
     url=input("Enter URL: ")
+    if url=="":
+        print("Cannot Execute Without URL")
+        sys.exit()
     path = urlparse(url).path
     coreurl=urlparse(url).netloc
     parsed = urlparse(url)
@@ -61,7 +64,7 @@ if url == None:
         keys = list(d.keys())
     #Accept Cookies
     cookies=input("Enter Enter Cookies (leave blank if none): ")
-    if (cookies==None):
+    if (cookies==None or cookies==""):
        postcookies={"AbdulAdmin":"Hacker 22385"}
     else:
         str = cookies
